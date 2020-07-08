@@ -1,0 +1,21 @@
+# Stuff in config that we definitely don't want to commit
+config/tsconfig.tsbuildinfo
+
+# IDE junk. Think twice comitting .vscode/
+.vscode/
+.vs/
+*.sln
+*.njsproj
+
+# Stuff you should definitely not commit
+node_modules/
+.env
+build/
+/dist
+/lib
+/tmp
+/yarn.lock
+
+# Stuff you probably don't want to commit
+coverage/
+*.log

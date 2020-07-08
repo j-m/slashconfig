@@ -1,0 +1,58 @@
+{
+  "name": "slashconfig",
+  "description": "slashconfig",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jonathan Marsh",
+    "email": "hello@jonmarsh.dev",
+    "url": "https://www.jonmarsh.dev"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "j-m/slashconfig",
+  "bugs": "https://github.com/j-m/slashconfig/issues",
+  "homepage": "https://github.com/j-m/slashconfig",
+  "keywords": [
+    "template",
+    "slashconfig",
+    "typescript",
+    "eslint",
+    "jest",
+    "prettier"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "tsc --project config/tsconfig.json",
+    "lint:syntax": "eslint --fix -c ./config/.eslintrc ./src ./test --ext .ts",
+    "lint:format": "prettier --write  --config ./config/.prettierrc ./src/**/*.ts ./test/**/*.ts",
+    "lint": "npm run lint:syntax && npm run lint:format",
+    "test:unit": "jest --config ./config/jest.config.js",
+    "test:integration": "echo \"Integration tests vary wildly depending what you're doing, but don't just delete this, you should definitely write some\" && exit 0",
+    "test": "npm run test:unit && npm run test:integration"
+  },
+  "pre-commit": [
+    "lint",
+    "build",
+    "test"
+  ],
+  "devDependencies": {
+    "@types/hjson": "^2.4.2",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.20",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "pre-commit": "^1.2.2",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
+  }
+}
